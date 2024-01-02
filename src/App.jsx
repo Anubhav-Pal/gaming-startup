@@ -9,6 +9,8 @@ import music from './assets/main.mp3';
 const App = () => {
   useEffect(() => {
     const audio = new Audio(music);
+    audio.volume = 0.5;
+    audio.loop = true;
 
     // Function to handle user interaction and play audio
     const handleUserInteraction = () => {
