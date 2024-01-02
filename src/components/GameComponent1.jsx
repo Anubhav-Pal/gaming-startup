@@ -1,14 +1,9 @@
 import React from 'react'
 import island from '../assets/island.png'
 import Alphabet from './Alphabet'
-import A from '../assets/gif/ambulance.gif'
-import B from '../assets/gif/bear.gif'
-import C from '../assets/gif/coin.gif'
-import D from '../assets/gif/duck.gif'
-import E from '../assets/gif/eye.gif'
-import F from '../assets/gif/food-truck.gif'
-import G from '../assets/gif/gift.gif'
-import H from '../assets/gif/horse.gif'
+import Lottie from 'lottie-react';
+
+
 import { useState } from 'react'
 import clickSound from '../assets/sound1.mp3'
 import a from '../assets/A.mp3'
@@ -21,6 +16,17 @@ import g from '../assets/G.mp3'
 import h from '../assets/H.mp3'
 
 
+
+import apple from '../assets/gif/apple.json'
+import bear from '../assets/gif/bear.json'
+import cat from '../assets/gif/cat.json'
+import duck from '../assets/gif/duck.json'
+import elephant from '../assets/gif/elephant.json'
+import fish from '../assets/gif/fish.json'
+import giraffe from '../assets/gif/giraffe.json'
+import heart from '../assets/gif/heart.json'
+
+
 const GameComponent = () => {
 
 
@@ -28,21 +34,21 @@ const GameComponent = () => {
     const [userAlphabet, setUserAlphabet] = useState('A');
     let imgSrc;
     if (userAlphabet === 'A') {
-        imgSrc = A;
+        imgSrc = apple;
     } else if (userAlphabet === 'B') {
-        imgSrc = B;
+        imgSrc = bear;
     } else if (userAlphabet === 'C') {
-        imgSrc = C;
+        imgSrc = cat;
     } else if (userAlphabet === 'D') {
-        imgSrc = D;
+        imgSrc = duck;
     } else if (userAlphabet === 'E') {
-        imgSrc = E;
+        imgSrc = elephant;
     } else if (userAlphabet === 'F') {
-        imgSrc = F;
+        imgSrc = fish;
     } else if (userAlphabet === 'G') {
-        imgSrc = G;
+        imgSrc = giraffe;
     } else if (userAlphabet === 'H') {
-        imgSrc = H;
+        imgSrc = heart;
     }
 
     const renderContent = () => {
@@ -50,7 +56,7 @@ const GameComponent = () => {
             case 'A':
                 return (
                     <h1>
-                        <span className='text-4xl'>{userAlphabet}</span>mbulance
+                        <span className='text-4xl'>{userAlphabet}</span>pple
                     </h1>
                 );
             case 'B':
@@ -62,7 +68,7 @@ const GameComponent = () => {
             case 'C':
                 return (
                     <h1>
-                        <span className='text-4xl'>{userAlphabet}</span>oin
+                        <span className='text-4xl'>{userAlphabet}</span>at
                     </h1>
                 );
             case 'D':
@@ -74,25 +80,25 @@ const GameComponent = () => {
             case 'E':
                 return (
                     <h1>
-                        <span className='text-4xl'>{userAlphabet}</span>ye
+                        <span className='text-4xl'>{userAlphabet}</span>lephant
                     </h1>
                 );
             case 'F':
                 return (
                     <h1>
-                        <span className='text-4xl'>{userAlphabet}</span>ood Truck
+                        <span className='text-4xl'>{userAlphabet}</span>ish
                     </h1>
                 );
             case 'G':
                 return (
                     <h1>
-                        <span className='text-4xl'>{userAlphabet}</span>ift
+                        <span className='text-4xl'>{userAlphabet}</span>iraffe
                     </h1>
                 );
             case 'H':
                 return (
                     <h1>
-                        <span className='text-4xl'>{userAlphabet}</span>orse
+                        <span className='text-4xl'>{userAlphabet}</span>eart    
                     </h1>
                 );
         }
@@ -114,9 +120,16 @@ const GameComponent = () => {
     return (
         <div className='main2'>
             <div className='flex flex-col items-center justify-between'>
-                <div className='w-auto gif-container flex items-center justify-around mt-10'>
-                    <div className='w-1/3'>
-                        <img src={imgSrc} alt="" />
+                <div className='w-full gif-container flex items-center justify-around mt-10'>
+                <div className=''>
+                        <div>
+                            <Lottie
+                                animationData={imgSrc} // Lottie animation JSON data
+                                loop={true} // Set to true if you want the animation to loop
+                                autoplay={true} // Set to true if you want the animation to play automatically
+                                style={{ width: 200, height: 200 }}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className='mb-10 text-white text-2xl font-bold'>{renderContent()}</div>
