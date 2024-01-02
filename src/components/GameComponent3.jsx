@@ -135,24 +135,27 @@ const GameComponent3 = () => {
 
 
     return (
-        <div className='main2'>
+        <div >
+            <div id='main' className="h-screen flex flex-col justify-between">
+                <div className='mt-10'>
 
-            <div className=' flex flex-col items-center justify-between'>
-                <div className='w-full gif-container flex items-center justify-around mt-10'>
-                    <div className=''>
-                        <div>
-                            <Lottie
-                                animationData={imgSrc} // Lottie animation JSON data
-                                loop={true} // Set to true if you want the animation to loop
-                                autoplay={true} // Set to true if you want the animation to play automatically
-                                style={{ width: 200, height: 200 }}
-                            />
+                    <div className='w-full gif-container flex flex-col items-center justify-around'>
+                        <div className=''>
+                            <div>
+                                <Lottie
+                                    animationData={imgSrc} // Lottie animation JSON data
+                                    loop={true} // Set to true if you want the animation to loop
+                                    autoplay={true} // Set to true if you want the animation to play automatically
+                                    style={{ width: 200, height: 200 }}
+                                />
+                            </div>
                         </div>
                     </div>
+                    <div className='text-white text-2xl font-bold text-center'>{renderContent()}</div>
                 </div>
-                <div className='mb-10 text-white text-2xl font-bold'>{renderContent()}</div>
-                <div className='flex flex-col items-center justify-between'>
-                    <div className='w-2/3 mb-10'>
+
+                <div className='flex flex-col items-center'>
+                    <div className='xs:w-2/3'>
                         <div className='flex flex-wrap items-center gap-4 justify-evenly'>
                             {alphabet.map((letter, index) => (
                                 <div className='cursor-pointer' key={index}>
@@ -162,11 +165,10 @@ const GameComponent3 = () => {
                                 </div>
                             ))}
                         </div>
-
                     </div>
-                    <div id="island" className='h-full opacity-65'>
-                        <img src={island} alt="" />
-                    </div>
+                </div>
+                <div id="island" className='opacity-65'>
+                    <img src={island} alt="" />
                 </div>
             </div>
         </div>

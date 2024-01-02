@@ -4,21 +4,20 @@ import earth from '../assets/Venus-1.svg'
 import venus from '../assets/Venus.svg'
 import { Link } from 'react-router-dom'
 import clickSound from '../assets/sound1.mp3'
-import Footer from './Footer'
+import { FaLinkedin } from 'react-icons/fa'
 
 const Home = () => {
 
     const soundEffect = new Audio(clickSound);
     return (
         <div>
-            <div id='main' className="main sm:h-screen sm:overflow-hidden flex-col items-center justify-between">
-                <div className='pt-10 header flex text-white text-2xl font-bold items-center justify-around '>
+            <div id='main' className="h-screen overflow-hidden flex flex-col justify-between">
+                <div className='header flex text-white text-2xl font-bold items-center justify-around mt-10'>
                     <div>
-                        {/* Abhishek Bishnoi */}
                         Learn English Alphabets
                     </div>
                 </div>
-                <div className='mt-10  sm:mt-40 main-component flex items-center justify-around'>
+                <div className='main-component flex items-center justify-around'>
                     <div className='option flex flex-wrap items-center justify-around gap-10'>
                         <Link to='/play1' onClick={() => {
                             soundEffect.play().catch(error => console.error('Error playing sound:', error));
@@ -42,8 +41,19 @@ const Home = () => {
 
                 </div>
                 <div>
-
-                    <Footer />
+                    <div className='footer m-4 flex items-center justify-around gap-4'>
+                        <div className='text-white flex flex-col sm:flex-row gap-2 sm:gap-5 items-center text-sm font-semibold'>
+                            made with ❤️ by Anubhav Pal
+                            <div className='text-white flex items-center gap-2'>
+                                <div>
+                                    <Link to='https://www.linkedin.com/in/anubhavpal/' target="_blank"><FaLinkedin size={30} style={{ color: 'white' }} /></Link>
+                                </div>
+                                <div>
+                                    anubhavpal.excl@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
