@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#main {
+  background-image: url('./assets/bg.png');
+  background-size: contain;
+  background-position: center;
+  height: 100vh;
+  background-repeat: repeat;
+}
+
+.main2 {
+  background-image: url('./assets/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.gif-container {
+  background-image: url('./assets/frame1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+#island {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
